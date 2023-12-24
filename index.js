@@ -97,7 +97,7 @@ function checkWinner(cells) {
 
 // function to create a header that displays winner when game is over
 function declareWinner(winner) {
-    if (move == 8) {
+    if (move == 8 && winner !== "") {
         let body = document.getElementById('game');
         let h2 = document.createElement('h2');
         body.append(h2);
