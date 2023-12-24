@@ -59,37 +59,45 @@ let winner = "";
 function checkWinner(cells) {
     if ((cells[0].innerHTML === "X" && cells[1].innerHTML === "X" && cells[2].innerHTML === "X") || (cells[0].innerHTML === "O" && cells[1].innerHTML === "O" && cells[2].innerHTML === "O")) {
         winner = 'Player ' + cells[0].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[3].innerHTML === "X" && cells[4].innerHTML === "X" && cells[5].innerHTML === "X") || (cells[3].innerHTML === "O" && cells[4].innerHTML === "O" && cells[5].innerHTML === "O")) {
         winner = 'Player ' + cells[3].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[6].innerHTML === "X" && cells[7].innerHTML === "X" && cells[8].innerHTML === "X") || (cells[6].innerHTML === "O" && cells[7].innerHTML === "O" && cells[8].innerHTML === "O")) {
         winner = 'Player ' + cells[6].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[0].innerHTML === "X" && cells[3].innerHTML === "X" && cells[6].innerHTML === "X") || (cells[0].innerHTML === "O" && cells[3].innerHTML === "O" && cells[6].innerHTML === "O")) {
         winner = 'Player ' + cells[0].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[1].innerHTML === "X" && cells[4].innerHTML === "X" && cells[7].innerHTML === "X") || (cells[1].innerHTML === "O" && cells[4].innerHTML === "O" && cells[7].innerHTML === "O")) {
         winner = 'Player ' + cells[1].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[2].innerHTML === "X" && cells[5].innerHTML === "X" && cells[8].innerHTML === "X") || (cells[2].innerHTML === "O" && cells[5].innerHTML === "O" && cells[8].innerHTML === "O")) {
         winner = 'Player ' + cells[2].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[0].innerHTML === "X" && cells[4].innerHTML === "X" && cells[8].innerHTML === "X") || (cells[0].innerHTML === "O" && cells[4].innerHTML === "O" && cells[8].innerHTML === "O")) {
         winner = 'Player ' + cells[0].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else if ((cells[2].innerHTML === "X" && cells[4].innerHTML === "X" && cells[6].innerHTML === "X") || (cells[2].innerHTML === "O" && cells[4].innerHTML === "O" && cells[6].innerHTML === "O")) {
         winner = 'Player ' + cells[2].innerHTML + ' wins!';
+        declareWinner(winner);
     }
     else {
         winner = "Draw!";
+        declareWinner(winner);
     }
-    declareWinner(winner);
 }
 
 // function to create a header that displays winner when game is over
 function declareWinner(winner) {
-    if (winner && winner !== "") { // check if winner has already been declared
+    if (move == 8) {
         let body = document.getElementById('game');
         let h2 = document.createElement('h2');
         body.append(h2);
@@ -98,7 +106,7 @@ function declareWinner(winner) {
     }
 }
 
-// function to clear board when button is pressed
+// function to clear board and reset game
 function clearGame() {
     cells[0].innerHTML = "";
     cells[1].innerHTML = "";
@@ -114,5 +122,5 @@ function clearGame() {
     playerTurn.innerHTML = "X's turn"
 }
 
-resetButton.addEventListener("click", clearGame); // call clearGame when reset button is clicked
-// display winner
+// call clear game function when reset button is clicked
+resetButton.addEventListener("click", clearGame);
