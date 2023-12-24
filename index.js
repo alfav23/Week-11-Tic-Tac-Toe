@@ -105,6 +105,8 @@ function declareWinner(winner) {
         console.log(winner);
     }
 }
+// not sure how to get declare winner to only pop up once rather than at every move,
+// and also for it to declare winner as soon as winning conditions are met
 
 // function to clear board and reset game
 function clearGame() {
