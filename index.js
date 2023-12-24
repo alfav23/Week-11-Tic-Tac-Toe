@@ -55,8 +55,8 @@ for (let i = 0; i < cells.length; i++) {
 
 
 // determine winner
+let winner = "";
 function checkWinner(cells) {
-    let winner = "";
     if ((cells[0].innerHTML === "X" && cells[1].innerHTML === "X" && cells[2].innerHTML === "X") || (cells[0].innerHTML === "O" && cells[1].innerHTML === "O" && cells[2].innerHTML === "O")) {
         winner = 'Player ' + cells[0].innerHTML + ' wins!';
     }
@@ -84,18 +84,20 @@ function checkWinner(cells) {
     else {
         winner = "Draw!";
     }
-    // at end of if statement call declare winner function
     declareWinner(winner);
 }
 
 // function to create a header that displays winner when game is over
-function declareWinner(winner){
-    let body = document.getElementById('game');
-    let h2 = document.createElement('h2');
-    body.append(h2);
-    h2.innerHTML = winner;
-    console.log(winner);
+function declareWinner(winner) {
+    if (winner && winner !== "") { // check if winner has already been declared
+        let body = document.getElementById('game');
+        let h2 = document.createElement('h2');
+        body.append(h2);
+        h2.innerHTML = winner;
+        console.log(winner);
+    }
 }
+
 // function to clear board when button is pressed
 function clearGame() {
     cells[0].innerHTML = "";
@@ -113,3 +115,4 @@ function clearGame() {
 }
 
 resetButton.addEventListener("click", clearGame); // call clearGame when reset button is clicked
+// display winner
