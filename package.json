@@ -2,5 +2,14 @@
   "dependencies": {
     "bootstrap": "^5.3.2",
     "jquery": "^3.7.1"
-  }
+  },
+  "name": "week-11",
+  "description": "<!-- Tic tac toe game created using JS and CSS grid -->",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
